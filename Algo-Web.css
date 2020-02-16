@@ -83,7 +83,6 @@ body::-webkit-scrollbar {
 
 
 .about-content{
-    background-color: rgb(212, 9, 9);
     padding-bottom:10px;
     padding-top: 10px;
 }
@@ -96,6 +95,7 @@ body::-webkit-scrollbar {
 }
 
 .about-main li{
+    background-color: rgb(212, 9, 9);
     float: left;
     margin-left: 20px;
 }
