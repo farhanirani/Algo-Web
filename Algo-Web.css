@@ -43,6 +43,10 @@ body::-webkit-scrollbar {
     background-color:rgb(212, 9, 9);
 }
 
+#desc-main{
+    overflow-x:auto ;
+}
+
 .desc-inner{
     width: 95%;
     margin: auto;
