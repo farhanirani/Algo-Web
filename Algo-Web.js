@@ -1,4 +1,5 @@
 function bubblesort(){
+    document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void bubblesort(int a[], int length)
     {
@@ -23,6 +24,7 @@ function bubblesort(){
 };
 
 function insertionsort(){
+    document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void insertionsort(int a[], int length)
     {
@@ -44,8 +46,9 @@ function insertionsort(){
 };
 
 function lcs(){
+    document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    #include<stdio.h>
+#include<stdio.h>
 #include<string.h>
 
 void printlcs( int i, int j, char x[100], char direction[100][100])
