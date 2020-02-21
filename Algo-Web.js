@@ -1,3 +1,27 @@
+function binarysearch(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre>
+    void binarysearch(int *a,int start, int end, int target)
+    {
+        if(end < start){
+            printf("array does not contain the target element");
+            exit(1);
+        }
+        int mid = (start+end)/2;
+
+        if(a[mid]==target){   <i>//ie if target found</i>
+            printf("element %d found at location %d",target,mid+1);
+            exit(1);
+        }                                       
+        else if(a[mid] > target)
+                <i>//new end would be mid-1, because target in the lower half</i>
+            binarysearch(a,start,mid-1,target);
+        else     <i>//new start would be mid+1, because target in upper half</i>
+            binarysearch(a,mid+1,end,target);
+    }
+   </pre>`       
+};
+
 function bubblesort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
