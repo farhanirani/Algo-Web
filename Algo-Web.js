@@ -69,6 +69,38 @@ function insertionsort(){
    </xmp></pre>`       
 };
 
+function quicksort(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    void quicksort(int *a, int left, int right)
+    {
+        int i,j,k,temp,pivot;
+        i=left;
+        j=right;
+        pivot=a[(left+right)/2];
+
+        while(i<j)
+        {
+            while(a[i]<pivot) 
+                i++;
+            while(pivot<a[j])
+                j--;
+            if(i<j)
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+                
+        if(left<i)
+            quicksort(a,left,i-1);
+        if(j<right)
+            quicksort(a,j+1,right);
+    }
+    </xmp></pre>`
+}
+
 function lcs(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
