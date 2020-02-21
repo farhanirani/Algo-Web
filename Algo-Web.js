@@ -165,6 +165,30 @@ function basics4(){
    </xmp></pre>`       
 };
 
+function pattern1(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    #include<stdio.h>
+    void main()
+    {
+        int row,i,spaces,value=1;
+        for(spaces=10,row=1;row<=4;row++,spaces--)
+        {
+            for(i=1;i<spaces;i++)
+                printf("  ");
+            
+            for(i=1;i<row;i++)
+            {
+                printf(" %d",value);
+                value++;
+            }
+            printf("\\n");
+        }
+    }
+
+   </xmp></pre>`       
+};
+
 function binarysearch(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre>
