@@ -13,7 +13,8 @@ function basics1(){
 
         scanf("%d%d",&a,&b);
         //scanf is used to take in input vaues
-        //%d is the format specifier used to identify which data type is being entered.
+        //%d is the format specifier used to identify which data
+        // type is being entered.
         //in this case, %d is for the integer.
         //the number of format specifiers should match the number and type of the variables
         //&a is used to store the input in the address of variable a
@@ -43,7 +44,8 @@ function basics2(){
     //void - specifies the return type of the function.
     //     - the return type can be void/int/float/double/char...etc
     
-    //the names you give in the function parameter are known as FORMAL PARAMETERS.
+    //the names you give in the function parameter are
+    // known as FORMAL PARAMETERS.
     //they will be the variable names you will use in this function.
     //it does not have to match what the parameters when you call it.
     {
@@ -123,20 +125,23 @@ function basics3(){
 function basics4(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    PASSING ARRAYS TO A FUNCTION
+    PASSING ARRAY TO A FUNCTION
     
     #include<stdio.h>
 
-    //traditional way is functionname( int a[10] ), which can also be used but has its cons
+    //the traditional way is void functionname( int a[10] ),
+    // which can also be used but has its cons
     
-    functionname(int *a)
-    //when you pass an array to a function, the pointer to the first position gets stored in a
-    //hence whatever change you make to the array will be globally changed, ie changed everywhere.
+    void functionname(int *a)
+    //when you pass an array to a function,
+    // the pointer to the first position gets stored in a
+    //hence whatever change you make to the array will
+    // be globally changed, ie changed everywhere.
     {
         int i;
         //we can use a[] as an array like we normally would
         for(i=0;i<10;i++)
-            printf("%d",a[i]);
+            printf("%d ",a[i]);
         //above is a loop to print the array passed
         
     }
