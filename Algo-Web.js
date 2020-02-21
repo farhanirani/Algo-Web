@@ -189,6 +189,23 @@ function pattern1(){
    </xmp></pre>`       
 };
 
+function pattern2(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    #include<stdio.h>
+    void main()
+    {
+        int row,spaces;
+        for(row=1;row<6;row++)
+        {
+            for(spaces=1;spaces<=row;spaces++)
+                {printf("*");}
+            printf("\\n");
+        }
+    }
+   </xmp></pre>`       
+};
+
 function binarysearch(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre>
