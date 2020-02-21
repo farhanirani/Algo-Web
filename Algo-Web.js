@@ -1,3 +1,79 @@
+function basics1(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    TAKING IN TWO NUMBERS AND SWAPPING THEM
+    
+    #include<stdio.h> //this includes the header file stdio
+
+    void main()
+    {
+        int a,b,c; //three variables a,b,c defined with the data type of integer
+
+        printf("%Enter a and b"); //printf("...") is used to display
+
+        scanf("%d%d",&a,&b);
+        //scanf is used to take in input vaues
+        //%d is the format specifier used to identify which data type is being entered.
+        //in this case, %d is for the integer.
+        //the number of format specifiers should match the number and type of the variables
+        //&a is used to store the input in the address of variable a
+
+        c = a;
+        a = b;
+        b = c;
+        //above is used to swap a and b
+        //first we store a in c, then assign value b to a, and then c to a;
+
+        printf("a is %d and b is %d",a,b);
+        //%d in printf prints the variable mentioned after ",  
+        //the variable type should match the format specifier.
+    }
+   </xmp></pre>`       
+};
+
+function basics2(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    USING A FUNCTION TO SWAP TWO VARIABLES
+    
+    #include<stdio.h>
+
+    void functionname(int aa, int bb) //this is known as function decleration
+    
+    //void - specifies the return type of the function.
+    //     - the return type can be void/int/float/double/char...etc
+    
+    //the names you give in the function parameter are known as FORMAL PARAMETERS.
+    //they will be the variable names you will use in this function.
+    //it does not have to match what the parameters when you call it.
+    {
+        //this is the function definition
+    
+        int temp;
+    
+        temp = aa;
+        aa = bb;
+        bb = temp;
+        //swapped aa and bb
+    
+        printf("aa is %d and bb is %d",aa,bb);
+    }
+    
+    void main()
+    {
+        int a,b;
+        printf("enter a and b");
+        scanf("%d%d",&a,&b);
+    
+        functionname( a , b );
+        //this is known as the function call.
+    
+        //you pass the same number of parameters with the same data type to the function.
+        //here a and b are known as actual parameters.
+    }
+   </xmp></pre>`       
+};
+
 function binarysearch(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre>
