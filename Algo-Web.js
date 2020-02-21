@@ -74,6 +74,25 @@ function basics2(){
    </xmp></pre>`       
 };
 
+function basics3(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    ARRAYS IN C
+    
+
+   </xmp></pre>`       
+};
+
+function basics4(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    PASSING ARRAYS TO A FUNCTION
+    
+
+    
+   </xmp></pre>`       
+};
+
 function binarysearch(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre>
