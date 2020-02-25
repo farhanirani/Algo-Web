@@ -5,6 +5,10 @@
     font-family: Century Gothic;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 button{
     outline: none;
 }
