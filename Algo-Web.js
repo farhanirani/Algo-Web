@@ -232,7 +232,8 @@ function binarysearch(){
 
 function bubblesort(){
     document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    document.getElementById("desc-main").innerHTML=`  
+    <pre><xmp>
     void bubblesort(int a[], int length)
     {
         int i,j,temp,flag;
@@ -252,7 +253,10 @@ function bubblesort(){
             }
         }
     }
-   </xmp></pre>`       
+   </xmp></pre>
+   
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/nmhjrI-aW5o?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   `
 };
 
 function insertionsort(){
@@ -274,7 +278,9 @@ function insertionsort(){
         }
     }
     
-   </xmp></pre>`       
+   </xmp></pre>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/OGzPmgsI-pQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   `       
 };
 
 function mergesort(){
@@ -313,7 +319,9 @@ function mergesort(){
             a[i] = b[i];
     }
     
-   </xmp></pre>`       
+   </xmp></pre>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/JSceec-wEyw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   `       
 };
 
 function quicksort(){
@@ -345,7 +353,9 @@ function quicksort(){
         if(j<right)
             quicksort(a,j+1,right);
     }
-    </xmp></pre>`
+    </xmp></pre>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PgBzjlCcFvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `
 }
 
 function lcs(){
