@@ -254,8 +254,9 @@ function bubblesort(){
         }
     }
    </xmp></pre>
-   
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/nmhjrI-aW5o?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <div style="max-width: 100%; width: 540px;  ">
+        <iframe width=100% height=280 src="https://www.youtube.com/embed/nmhjrI-aW5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
    `
 };
 
@@ -279,8 +280,9 @@ function insertionsort(){
     }
     
    </xmp></pre>
+   <div style="max-width: 100%; width: 540px;  ">
    <iframe width="560" height="315" src="https://www.youtube.com/embed/OGzPmgsI-pQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   `       
+   </div>`       
 };
 
 function mergesort(){
@@ -320,8 +322,9 @@ function mergesort(){
     }
     
    </xmp></pre>
+   <div style="max-width: 100%; width: 540px;  ">
    <iframe width="560" height="315" src="https://www.youtube.com/embed/JSceec-wEyw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   `       
+   </div>`       
 };
 
 function quicksort(){
@@ -354,8 +357,9 @@ function quicksort(){
             quicksort(a,j+1,right);
     }
     </xmp></pre>
+    <div style="max-width: 100%; width: 540px;  ">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/PgBzjlCcFvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    `
+    </div>`
 }
 
 function lcs(){
