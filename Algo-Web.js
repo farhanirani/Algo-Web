@@ -561,7 +561,7 @@ function knapsack01(){
 };
 
 
-function nQueens(){
+function nqueens(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     
