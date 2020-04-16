@@ -165,6 +165,86 @@ function basics4(){
    </xmp></pre>`       
 };
 
+function infixtopostfix(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+
+    int priority( char a)
+    {
+        if( a == '+' || a == '-')
+            return 1;
+        if( a == '/' || a == '*')
+            return 2;
+    }
+    ---------------------------------
+    printf("Enter expression : ");
+    scanf("%s",s);
+
+    for(i=0;i<strlen(s);i++) {
+        if (s[i] == '(') {
+            push(s[i]);
+        }
+        else if (s[i] == ')') {
+            do  {
+                data = pop();
+                if(data == '(') break;
+                printf("%c",data);
+            }while(1);
+        } 
+        else if (s[i]=='+' || s[i]=='-' || s[i]=='*' || s[i]=='/') {
+            while(top != -1 && stack[top] != '(' && priority(stack[top]) > priority(s[i]) )
+            {
+                data = pop();
+                printf("%c",data);
+            }
+            push(s[i]);
+        }
+        else {
+            printf("%c",s[i]);
+        }
+
+    }
+
+    while(top!=-1){
+        data = pop();
+        printf("%c",data);
+    }
+
+   </xmp></pre>`       
+};
+
+function postfixeval(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    printf("Enter postfix expression : ");
+    scanf("%s",s);
+    -------------------------------
+    for (i=0;i<strlen(s);i++)
+	{
+		if(isdigit(s[i]))
+		{
+			push(s[i] - '0');
+		}
+		else
+		{
+			a2 = pop();
+			a1 = pop(); 
+            if (s[i] == '+') push(a1+a2);
+            else if (s[i] == '-') push(a1-a2);
+            else if (s[i] == '*') push(a1*a2);
+            else if (s[i] == '/') push(a1/a2);
+            else {
+                printf("INVALID OPERAND");
+                exit(1);
+            }
+        }
+    }
+    ans = pop();
+    printf("Answer : %f",ans);
+
+   </xmp></pre>`       
+};
+
 function pattern1(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
