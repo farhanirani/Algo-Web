@@ -334,9 +334,6 @@ function bubblesort(){
         }
     }
    </xmp></pre>
-   <div style="max-width: 100%; width: 540px;  ">
-        <iframe width=100% height=280 src="https://www.youtube.com/embed/nmhjrI-aW5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
    `
 };
 
@@ -360,9 +357,7 @@ function insertionsort(){
     }
     
    </xmp></pre>
-   <div style="max-width: 100%; width: 540px;  ">
-   <iframe width=100% height=280 src="https://www.youtube.com/embed/OGzPmgsI-pQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   </div>`       
+    `       
 };
 
 function mergesort(){
@@ -402,9 +397,7 @@ function mergesort(){
     }
     
    </xmp></pre>
-   <div style="max-width: 100%; width: 540px;  ">
-   <iframe width=100% height=280 src="https://www.youtube.com/embed/JSceec-wEyw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   </div>`       
+   `       
 };
 
 function quicksort(){
@@ -437,9 +430,7 @@ function quicksort(){
             quicksort(a,j+1,right);
     }
     </xmp></pre>
-    <div style="max-width: 100%; width: 540px;  ">
-    <iframe width=100% height=280 src="https://www.youtube.com/embed/PgBzjlCcFvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>`
+    `
 }
 
 function lcs(){
@@ -644,37 +635,56 @@ function knapsack01(){
 function nqueens(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    #include<stdio.h>
+    #include<stdlib.h>
     
-    n = int(input("Enter the number of queens : "))
-    x = [0] * (n+1)
+    int x[100], n;
     
-    def place(rowNum,i):
-        for j in range(1,rowNum):
-            if(x[j] == i) or (abs(x[j]-i) == abs(j-rowNum)):
-                return 0
-        return 1
+    int place(int rowNum,int i) 
+    {
+        for(int j=1; j<rowNum; j++) {
+            if ( ( x[j] == i ) || (abs(x[j]-i) == abs(j-rowNum)) ) {
+                return 0;
+            }
+        }
+        return 1;
+    }
     
-    def printt(n):
-        for temp in range(1,n+1):
-            for temp2 in range(1,n+1):
-                val = x[temp]
-                if temp2 == val:
-                    print(" Q ",end="")
-                else:
-                    print(" * ",end="")
-            print()
-        print()
+    void printt(int n)
+    {
+        for(int temp=1; temp < n+1; temp++) {
+            for(int temp2=1; temp2 <n+1; temp2++) {
+                if( temp2 == x[temp] )
+                    printf(" Q ");
+                else
+                    printf(" * ");
+            }
+            printf("\\n");
+        }
+        printf("\\n");
+    }
     
-    def nQueens(rowNum,n):
-        for i in range(1,n+1):
-            if (place(rowNum,i) == 1):
-                x[rowNum] = i
-                if rowNum == n:
-                    printt(n)
-                else:
-                    nQueens(rowNum+1,n)
+    void nQueens(int rowNum, int n)
+    {
+        for( int i=1; i<n+1; i++) {
+            if (place(rowNum,i) == 1) {
+                x[rowNum] = i;
+                if (rowNum == n)
+                    printt(n);
+                else
+                    nQueens(rowNum+1,n);
+            }
+        }
+    }
     
-    nQueens(1,n)    
+    int main()
+    {
+        printf("Enter number fo queens : ");
+        scanf("%d",&n);
+        for( int i=1; i<n; i++)
+            x[i] = 0;
+        nQueens(1,n);
+    }
     
    </xmp></pre>`       
 };
