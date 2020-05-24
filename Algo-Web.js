@@ -679,7 +679,7 @@ function nqueens(){
     
     int main()
     {
-        printf("Enter number fo queens : ");
+        printf("Enter number of queens : ");
         scanf("%d",&n);
         for( int i=1; i<n; i++)
             x[i] = 0;
