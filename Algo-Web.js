@@ -1,3 +1,6 @@
+// -------------------- Basics ---------------------------- //
+
+
 function basics1(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
@@ -165,6 +168,185 @@ function basics4(){
    </xmp></pre>`       
 };
 
+
+// -------------------- Sorting ---------------------------- //
+
+
+function bubblesort(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`  
+    <pre><xmp>
+    void bubblesort(int a[], int length)
+    {
+        int i,j,temp,flag;
+        for(i=0;i<length-1;i++)
+        {
+            flag=1;
+            for(j=0;j<length-i-1;j++)
+            {
+                if(a[j] > a[j+1])
+                {
+                    temp=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=temp;
+                    flag=0;
+                }
+                if(flag==1) break;
+            }
+        }
+    }
+   </xmp></pre>
+   `
+};
+
+function mergesort(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    void mergesort(int a[], int left, int right)
+    {
+        if(left<right)
+        {
+            int mid = (left + right)/2;
+            mergesort(a,left,mid);
+            mergesort(a,mid+1,right);
+            merge(a,left,mid,right);
+        }
+    }
+
+    void merge(int a[], int left, int mid, int right)
+    {
+        int l1, l2, i;
+
+        for(l1 = left, l2 = mid + 1, i = left; l1 <= mid && l2 <= right; i++) 
+        {
+            if(a[l1] <= a[l2])
+                b[i] = a[l1++];
+            else
+                b[i] = a[l2++];
+        }
+
+        while(l1 <= mid)    
+            b[i++] = a[l1++];
+
+        while(l2 <= right)   
+            b[i++] = a[l2++];
+
+        for(i = left; i <= right; i++)
+            a[i] = b[i];
+    }
+    
+   </xmp></pre>
+   `       
+};
+
+function insertionsort(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    void insertionsort(int a[], int length)
+    {
+        int i,j,val;
+        for(i=1;i<length;i++)
+        {
+            val=a[i];
+            for(j=i-1;j>=0;j--)
+                if(val<a[j])
+                    a[j+1]=a[j];
+                else
+                    break;
+    
+            a[j+1]=val;
+        }
+    }
+    
+   </xmp></pre>
+    `       
+};
+
+function quicksort(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    void quicksort(int *a, int left, int right)
+    {
+        int i,j,k,temp,pivot;
+        i=left;
+        j=right;
+        pivot=a[(left+right)/2];
+
+        while(i<j)
+        {
+            while(a[i]<pivot) 
+                i++;
+            while(pivot<a[j])
+                j--;
+            if(i<j)
+            {
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+                
+        if(left<i)
+            quicksort(a,left,i-1);
+        if(j<right)
+            quicksort(a,j+1,right);
+    }
+    </xmp></pre>
+    `
+}
+
+function selectionsort(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    
+    </xmp></pre>
+    `
+}
+
+// -------------------- C Basics ---------------------------- //
+
+
+function pattern1(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    #include<stdio.h>
+    void main()
+    {
+        int row,i,spaces,value=1;
+        for(spaces=10,row=1;row<=4;row++,spaces--)
+        {
+            for(i=1;i<spaces;i++)
+                printf("  ");
+            
+            for(i=1;i<row;i++)
+            {
+                printf(" %d",value);
+                value++;
+            }
+            printf("\\n");
+        }
+    }
+
+   </xmp></pre>`       
+};
+
+function pattern2(){
+    document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+    #include<stdio.h>
+    void main()
+    {
+        int row,spaces;
+        for(row=1;row<6;row++)
+        {
+            for(spaces=1;spaces<=row;spaces++)
+                {printf("*");}
+            printf("\\n");
+        }
+    }
+   </xmp></pre>`       
+};
+
 function infixtopostfix(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
@@ -245,46 +427,10 @@ function postfixeval(){
    </xmp></pre>`       
 };
 
-function pattern1(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    #include<stdio.h>
-    void main()
-    {
-        int row,i,spaces,value=1;
-        for(spaces=10,row=1;row<=4;row++,spaces--)
-        {
-            for(i=1;i<spaces;i++)
-                printf("  ");
-            
-            for(i=1;i<row;i++)
-            {
-                printf(" %d",value);
-                value++;
-            }
-            printf("\\n");
-        }
-    }
 
-   </xmp></pre>`       
-};
+// -------------------- Searching ---------------------------- //
 
-function pattern2(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    #include<stdio.h>
-    void main()
-    {
-        int row,spaces;
-        for(row=1;row<6;row++)
-        {
-            for(spaces=1;spaces<=row;spaces++)
-                {printf("*");}
-            printf("\\n");
-        }
-    }
-   </xmp></pre>`       
-};
+
 
 function binarysearch(){
     document.documentElement.scrollTop = 0;
@@ -309,129 +455,6 @@ function binarysearch(){
     }
    </pre>`       
 };
-
-function bubblesort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main").innerHTML=`  
-    <pre><xmp>
-    void bubblesort(int a[], int length)
-    {
-        int i,j,temp,flag;
-        for(i=0;i<length-1;i++)
-        {
-            flag=1;
-            for(j=0;j<length-i-1;j++)
-            {
-                if(a[j] > a[j+1])
-                {
-                    temp=a[j];
-                    a[j]=a[j+1];
-                    a[j+1]=temp;
-                    flag=0;
-                }
-                if(flag==1) break;
-            }
-        }
-    }
-   </xmp></pre>
-   `
-};
-
-function insertionsort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    void insertionsort(int a[], int length)
-    {
-        int i,j,val;
-        for(i=1;i<length;i++)
-        {
-            val=a[i];
-            for(j=i-1;j>=0;j--)
-                if(val<a[j])
-                    a[j+1]=a[j];
-                else
-                    break;
-    
-            a[j+1]=val;
-        }
-    }
-    
-   </xmp></pre>
-    `       
-};
-
-function mergesort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    void mergesort(int a[], int left, int right)
-    {
-        if(left<right)
-        {
-            int mid = (left + right)/2;
-            mergesort(a,left,mid);
-            mergesort(a,mid+1,right);
-            merge(a,left,mid,right);
-        }
-    }
-
-    void merge(int a[], int left, int mid, int right)
-    {
-        int l1, l2, i;
-
-        for(l1 = left, l2 = mid + 1, i = left; l1 <= mid && l2 <= right; i++) 
-        {
-            if(a[l1] <= a[l2])
-                b[i] = a[l1++];
-            else
-                b[i] = a[l2++];
-        }
-
-        while(l1 <= mid)    
-            b[i++] = a[l1++];
-
-        while(l2 <= right)   
-            b[i++] = a[l2++];
-
-        for(i = left; i <= right; i++)
-            a[i] = b[i];
-    }
-    
-   </xmp></pre>
-   `       
-};
-
-function quicksort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    void quicksort(int *a, int left, int right)
-    {
-        int i,j,k,temp,pivot;
-        i=left;
-        j=right;
-        pivot=a[(left+right)/2];
-
-        while(i<j)
-        {
-            while(a[i]<pivot) 
-                i++;
-            while(pivot<a[j])
-                j--;
-            if(i<j)
-            {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-            }
-        }
-                
-        if(left<i)
-            quicksort(a,left,i-1);
-        if(j<right)
-            quicksort(a,j+1,right);
-    }
-    </xmp></pre>
-    `
-}
 
 function lcs(){
     document.documentElement.scrollTop = 0;
@@ -500,6 +523,10 @@ function lcs(){
     
    </xmp></pre>`       
 };
+
+
+// -------------------- Dynamic Programming ---------------------------- //
+
 
 function floydwarshall(){
     document.documentElement.scrollTop = 0;
@@ -630,7 +657,6 @@ function knapsack01(){
     
    </xmp></pre>`       
 };
-
 
 function nqueens(){
     document.documentElement.scrollTop = 0;
