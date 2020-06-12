@@ -58,6 +58,13 @@ body::-webkit-scrollbar {
     padding-bottom: 60px;
 }
 
+.desc-inner-1{
+    width: 95%;
+    margin: auto;
+    padding-top: 80px;
+    margin-bottom: -50px;
+}
+
 .main-content {
     background-color: rgb(212, 9, 9);
     padding-bottom:200px;
