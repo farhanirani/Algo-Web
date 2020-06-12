@@ -3,6 +3,7 @@
 
 function basics1(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     TAKING IN TWO NUMBERS AND SWAPPING THEM
     
@@ -37,6 +38,7 @@ function basics1(){
 
 function basics2(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     USING A FUNCTION TO SWAP TWO VARIABLES
     
@@ -81,6 +83,7 @@ function basics2(){
 
 function basics3(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     ARRAYS IN C
     
@@ -127,6 +130,7 @@ function basics3(){
 
 function basics4(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     PASSING ARRAY TO A FUNCTION
     
@@ -174,6 +178,19 @@ function basics4(){
 
 function bubblesort(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'block';
+
+    // document.getElementById("sketch-button").innerHTML = ''
+    // var divtemp = document.getElementById("sketch-button")
+    // var button = document.createElement('button')
+    // var text = document.createTextNode('Visualize')
+    // button.appendChild(text)
+    // divtemp.appendChild(button)
+    // button.onclick = bubblesetup()
+
+    setup()
+    bubblesetup()
+
     document.getElementById("desc-main").innerHTML=`  
     <pre><xmp>
     void bubblesort(int a[], int length)
@@ -201,6 +218,12 @@ function bubblesort(){
 
 function mergesort(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
+
+    setup()
+    bubblesetup()
+
+
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void mergesort(int a[], int left, int right)
     {
@@ -241,6 +264,7 @@ function mergesort(){
 
 function insertionsort(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void insertionsort(int a[], int length)
     {
@@ -264,6 +288,7 @@ function insertionsort(){
 
 function quicksort(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void quicksort(int *a, int left, int right)
     {
@@ -297,6 +322,7 @@ function quicksort(){
 
 function selectionsort(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'block';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     
     </xmp></pre>
@@ -308,6 +334,7 @@ function selectionsort(){
 
 function pattern1(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     #include<stdio.h>
     void main()
@@ -332,6 +359,7 @@ function pattern1(){
 
 function pattern2(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     #include<stdio.h>
     void main()
@@ -349,6 +377,7 @@ function pattern2(){
 
 function infixtopostfix(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
 
     int priority( char a)
@@ -397,6 +426,7 @@ function infixtopostfix(){
 
 function postfixeval(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     printf("Enter postfix expression : ");
     scanf("%s",s);
@@ -434,6 +464,7 @@ function postfixeval(){
 
 function binarysearch(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre>
     void binarysearch(int *a, int start, int end, int target)
     {
@@ -458,6 +489,7 @@ function binarysearch(){
 
 function lcs(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void lcs(char *x, char *y)
     {
@@ -530,6 +562,7 @@ function lcs(){
 
 function floydwarshall(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     
     void main()
@@ -573,6 +606,7 @@ function floydwarshall(){
 
 function knapsack01(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     
     #include<stdio.h>
@@ -660,6 +694,7 @@ function knapsack01(){
 
 function nqueens(){
     document.documentElement.scrollTop = 0;
+    document.getElementById("desc-main-1").style.display = 'none';
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     #include<stdio.h>
     #include<stdlib.h>
