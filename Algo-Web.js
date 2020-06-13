@@ -180,16 +180,7 @@ function bubblesort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main-1").style.display = 'block';
 
-    // document.getElementById("sketch-button").innerHTML = ''
-    // var divtemp = document.getElementById("sketch-button")
-    // var button = document.createElement('button')
-    // var text = document.createTextNode('Visualize')
-    // button.appendChild(text)
-    // divtemp.appendChild(button)
-    // button.onclick = bubblesetup()
-
-    setup()
-    bubblesetup()
+    setup(1)
 
     document.getElementById("desc-main").innerHTML=`  
     <pre><xmp>
@@ -208,8 +199,8 @@ function bubblesort(){
                     a[j+1]=temp;
                     flag=0;
                 }
-                if(flag==1) break;
             }
+            if(flag==1) break;
         }
     }
    </xmp></pre>
@@ -220,9 +211,7 @@ function mergesort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main-1").style.display = 'none';
 
-    setup()
-    bubblesetup()
-
+    // setup(2)
 
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void mergesort(int a[], int left, int right)
