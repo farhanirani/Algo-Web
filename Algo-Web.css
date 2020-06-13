@@ -13,6 +13,10 @@ button{
     outline: none;
 }
 
+button[disabled] {
+  pointer-events: none;
+}
+
 /* Hide scrollbar*/
 body::-webkit-scrollbar {
     display: none;
@@ -93,12 +97,26 @@ body::-webkit-scrollbar {
 	transition: 0.4s ease;
 }
 
+.desc-inner-1 {
+    text-align: center;
+}
+
+.desc-inner-1 button{
+    width: 25%;
+    color: white;
+    background-color: black;
+    padding: 5px;
+	transition: 0.4s ease;
+}
+
 .main-content li button:hover{
 	background-color: white;
 	color: black;
 }
 
-
+.desc-inner-1 button:hover{
+	background-color:rgb(212, 9, 9);
+}
 
 .about-content{
     padding-bottom:10px;
