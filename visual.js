@@ -1,38 +1,27 @@
-function setup() {
-  var canvas = createCanvas(document.getElementById("sketch-holder").clientWidth, 120) 
-  canvas.parent('sketch-holder') 
-}
-
-
-// --------------------- //
-let array = []
-let colorarray = []
+// --------- INITIAL PARMS ----------- //
+let swap1 = -1
+let swap2 = -1
 let w = 12
-let sleeptimer = 10000
+let sleeptimer = 260
 let countdown = 100
-let swap1 = 0
-let swap2 = 0
-let i = 0
-let j = 0
-// --------------------- //
 
+// ------------------------------------ BASIC DRAWING, SWAPPING FUNCTIONS --------------------------------------- //
 function draw() {
   background(255)
   for (let x = 0; x < array.length; x++) {
-    if(x == swap2 || colorarray[x] == 1) {
-      c = color('rgb(255,0,0)');
-    } else if(x == swap1) {
+    if(x == swap1) {
       c = color('rgb(0,0,255)');
-    } else if(colorarray[x] == 2) { 
-      c = color('rgb(173, 29, 29)');
+    } else if(x == swap2) {
+      c = color('rgb(255,0,0)');
     } else {
-      c = color('rgb(0,0,0)');
+      c = color('rgb('+floor(255*array[x]/120)+',0,0)');
     }
     fill(c)
     rect(x * w, height - array[x], w, array[x])
   }
 }
 
+// swap pos a and b from array
 async function swap(arr, a, b) {
   await sleep(sleeptimer)
   let temp = arr[a]
@@ -46,54 +35,74 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms)) 
 }
 
-// --------------------- //
+// ---------------------------------------------------------------------------------------------------------------- //
 
 
-// ************************************ //
 
 
-function bubblesetup() {
-  sleeptimer = 230
-  array = new Array(floor(width / w))
-  colorarray = new Array(floor(width / w))
-  i=0;j=0;
-  swap1=0;swap2=0;
+// ************************* MAIN SETUP, CHOICE IS WHICH SORTING TAKES PLACE ************************************* //
+// *************************************************************************************************************** //
 
-  for (i = 0; i < array.length; i++) {
-    array[i] = random(height)
-    colorarray[i] = 0
+function setup(choice) {
+
+  if(choice) {  
+    var canvas = createCanvas(document.getElementById("sketch-holder").clientWidth, 120) 
+    canvas.parent('sketch-holder') 
+    
+    array = new Array(floor(width / w))
+    sleeptimer = 260
+    countdown = 100
+
+    // Disabling all buttons
+    var buttons = document.getElementsByTagName('button')
+    for(i=0; i<buttons.length; i++) {
+      buttons[i].disabled = true
+    }
+
+    for (i = 0; i < array.length; i++) {
+      array[i] = random(height)
+    }
   }
-  bubblesorting(array, array.length)
+
+  if(choice == 1)
+    bubblesorting(array, array.length)
+  if(choice == 2)
+    mergesorting(array, array.length)
 }
-// ************************************ //
+// *************************************************************************************************************** //
 
 
 
-// ************************************************************** //
 
+// ***************************************** BUBBLE SORT ********************************************************* //
 
 async function bubblesorting(array, len) {
-  for(i=0; i<len-1; i++) {
-    
-    colorarray[len-1-i] = 2
-    for(j=0; j<len-1-i; j++) {
-      if(array[j] > array[j+1]) {
-    
+  var flag
+  for(i=0; i<len-1; i++) 
+  {
+    flag = 1
+    for(j=0; j<len-1-i; j++) 
+    {
+      if(array[j] > array[j+1]) 
+      {
         await swap(array, j, j+1)
         draw()
-        if(sleeptimer > 50)
-          sleeptimer -= 5
-        else 
-          if(countdown-- < 0)
-            sleeptimer -= 10
+        flag = 0
+
+        // for speed
+        if(sleeptimer > 50) sleeptimer -= 5
+        else if(countdown-- < 0) sleeptimer -= 10
       }
     }
-    colorarray[j] = 1
+    if(flag == 1)
+      break
   }
-  colorarray[0] = 1
+  swap1 = -1
+  swap2 = -1
+  draw()
+  // Enable buttons
+  var buttons = document.getElementsByTagName('button')
+  for(i=0; i<buttons.length; i++) {
+    buttons[i].disabled = false
+  }
 }
-
-// ************************************************************** //
-
-
-
