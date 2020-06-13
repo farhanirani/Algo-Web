@@ -180,7 +180,9 @@ function bubblesort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main-1").style.display = 'block';
 
-    setup(1)
+    setup()
+
+    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(1)''>Visualize</button>"
 
     document.getElementById("desc-main").innerHTML=`  
     <pre><xmp>
@@ -211,7 +213,7 @@ function mergesort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main-1").style.display = 'none';
 
-    // setup(2)
+    // setup()
 
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void mergesort(int a[], int left, int right)

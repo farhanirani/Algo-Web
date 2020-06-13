@@ -4,10 +4,12 @@ let swap2 = -1
 let w = 12
 let sleeptimer = 260
 let countdown = 100
-
+let sorted = true
+let array = []
 // ------------------------------------ BASIC DRAWING, SWAPPING FUNCTIONS --------------------------------------- //
 function draw() {
   background(255)
+  noStroke()
   for (let x = 0; x < array.length; x++) {
     if(x == swap1) {
       c = color('rgb(0,0,255)');
@@ -44,12 +46,19 @@ function sleep(ms) {
 // *************************************************************************************************************** //
 
 function setup(choice) {
+  var canvas = createCanvas(document.getElementById("sketch-holder").clientWidth, 120) 
+  canvas.parent('sketch-holder') 
 
-  if(choice) {  
-    var canvas = createCanvas(document.getElementById("sketch-holder").clientWidth, 120) 
-    canvas.parent('sketch-holder') 
-    
+  if((choice && sorted) || !choice) {
     array = new Array(floor(width / w))
+    for (i = 0; i < array.length; i++) {
+      array[i] = random(height)
+    }
+    draw()
+    sorted = false
+  }
+  
+  if(choice) {  
     sleeptimer = 260
     countdown = 100
 
@@ -59,15 +68,13 @@ function setup(choice) {
       buttons[i].disabled = true
     }
 
-    for (i = 0; i < array.length; i++) {
-      array[i] = random(height)
-    }
-  }
+    if(choice == 1)
+      bubblesorting(array, array.length)
+    if(choice == 2)
+      mergesorting(array, array.length)
 
-  if(choice == 1)
-    bubblesorting(array, array.length)
-  if(choice == 2)
-    mergesorting(array, array.length)
+  } 
+  
 }
 // *************************************************************************************************************** //
 
@@ -100,6 +107,7 @@ async function bubblesorting(array, len) {
   swap1 = -1
   swap2 = -1
   draw()
+  sorted = true
   // Enable buttons
   var buttons = document.getElementsByTagName('button')
   for(i=0; i<buttons.length; i++) {
