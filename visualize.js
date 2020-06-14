@@ -150,8 +150,7 @@ async function mergesortalgorithm(array, left, mid, right) {
     }
     
     // for speed
-    if(sleeptimer > 30) sleeptimer -= 5
-    else if(countdown-- < 0) sleeptimer -= 1
+    if(sleeptimer > 15) sleeptimer -= 5
   }
 
   while(l1 <= mid)    
