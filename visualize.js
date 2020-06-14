@@ -3,7 +3,6 @@ let swap1 = -1
 let swap2 = -1
 let w = 10
 let sleeptimer = 260
-let countdown = 100
 let sorted = true
 let array = []
 let pivot = -1
@@ -13,6 +12,8 @@ let b = [] //for merge sort
 // ------------------------------------ BASIC DRAWING, SWAPPING FUNCTIONS --------------------------------------- //
 // daraw is draw function
 function daraw() {
+  // console.log(array.indexOf(pivot))
+
   background(255)
   noStroke()
   for (let x = 0; x < array.length; x++) {
@@ -68,7 +69,6 @@ function setup(choice) {
   
   if(choice) {  
     sleeptimer = 260
-    countdown = 100
 
     // Disabling all buttons
     let buttons = document.getElementsByTagName('button')
@@ -112,8 +112,7 @@ async function bubblesorting(array, len) {
         flag = 0
 
         // for speed
-        if(sleeptimer > 50) sleeptimer -= 5
-        else if(countdown-- < 0) sleeptimer = 0 
+        if(sleeptimer > 5) sleeptimer -= 5
       }
     }
     if(flag == 1)
@@ -150,7 +149,7 @@ async function mergesortalgorithm(array, left, mid, right) {
     }
     
     // for speed
-    if(sleeptimer > 15) sleeptimer -= 5
+    if(sleeptimer > 5) sleeptimer -= 5
   }
 
   while(l1 <= mid)    
@@ -204,6 +203,46 @@ async function mergesorting(array, left, right) {
 
 // ***************************************** QUICK SORT ********************************************************* //
 
+async function insertionsorting(array, len) {
+  let val,m,n
+  for (m = 0; m < len; m++)
+  {
+    val = array[m]
+    pivot = array[m-1]
+    for(n = m-1; n >= 0; n--)
+    {
+      if( val < array[n]) 
+      {
+        swap1 = n
+        swap2 = n+1
+        array[n+1] = array[n]
+        daraw()
+        await sleep(sleeptimer)
+        // for speed
+        if(sleeptimer > 5) sleeptimer -= 5
+        
+      } 
+      else {
+        break;
+      }
+    }
+    array[n+1] = val
+  }
+
+  swap1 = -1
+  swap2 = -1
+  pivot = -1
+  sorted = true
+  daraw()
+  console.log('OVER')
+  let buttons = document.getElementsByTagName('button')
+  for(i=0; i<buttons.length; i++) {
+    buttons[i].disabled = false
+  }
+}
+
+// ***************************************** QUICK SORT ********************************************************* //
+
 async function quicksorting(array, left, right) {
   daraw()
   let tempLeft = left;
@@ -212,10 +251,24 @@ async function quicksorting(array, left, right) {
 
   while(tempLeft < tempRight)
   {
-    while(array[tempLeft] < pivot)
+    while(array[tempLeft] < pivot) {
       tempLeft++;
-    while(array[tempRight] > pivot)
+      swap1 = tempLeft
+      daraw()
+      await sleep(sleeptimer)
+      // for speed
+      if(sleeptimer > 5) sleeptimer -= 5
+
+    }
+    while(array[tempRight] > pivot) {
       tempRight--;
+      swap2 = tempRight
+      daraw()
+      await sleep(sleeptimer)
+      // for speed
+      if(sleeptimer > 5) sleeptimer -= 5
+    }
+      
 
     if(tempLeft<tempRight) {
       
@@ -223,8 +276,7 @@ async function quicksorting(array, left, right) {
       daraw()
       
       // for speed
-      if(sleeptimer > 50) sleeptimer -= 5
-      else if(countdown-- < 0) sleeptimer = 0
+      if(sleeptimer > 5) sleeptimer -= 5
     }
   }
 
