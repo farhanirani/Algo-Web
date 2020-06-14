@@ -7,8 +7,12 @@ let countdown = 100
 let sorted = true
 let array = []
 let pivot = -1
+let ismergesort = false
+let b = [] //for merge sort
+
 // ------------------------------------ BASIC DRAWING, SWAPPING FUNCTIONS --------------------------------------- //
-function draw() {
+// daraw is draw function
+function daraw() {
   background(255)
   noStroke()
   for (let x = 0; x < array.length; x++) {
@@ -60,6 +64,8 @@ function setup(choice) {
     sorted = false
   }
   
+  daraw()
+  
   if(choice) {  
     sleeptimer = 260
     countdown = 100
@@ -73,7 +79,7 @@ function setup(choice) {
     if(choice == 1)
       bubblesorting(array, array.length)
     else if(choice == 2)
-      mergesorting(array, array.length)
+      mergesorting(array, 0, array.length-1)
     else if(choice == 3)
       insertionsorting(array, array.length)
     else if(choice == 4)
@@ -102,6 +108,7 @@ async function bubblesorting(array, len) {
       if(array[j] > array[j+1]) 
       {
         await swap(array, j, j+1)
+        daraw()
         flag = 0
 
         // for speed
@@ -115,6 +122,8 @@ async function bubblesorting(array, len) {
   swap1 = -1
   swap2 = -1
   sorted = true
+  daraw()
+  
   // Enable buttons
   let buttons = document.getElementsByTagName('button')
   for(i=0; i<buttons.length; i++) {
@@ -122,9 +131,82 @@ async function bubblesorting(array, len) {
   }
 }
 
+// ***************************************** MERGE SORT ********************************************************* //
+
+async function mergesortalgorithm(array, left, mid, right) {
+  let l1,l2
+  for(l1 = left, l2 = mid + 1, i = left; l1 <= mid && l2 <= right; i++) {
+    swap1 = l1
+    swap2 = l2
+    if(array[l1] <= array[l2]) {
+      b[i] = array[l1++];
+      daraw()
+      await sleep(sleeptimer)
+    }
+    else {
+      b[i] = array[l2++];
+      daraw()
+      await sleep(sleeptimer)
+    }
+    
+    // for speed
+    if(sleeptimer > 30) sleeptimer -= 5
+    else if(countdown-- < 0) sleeptimer -= 1
+  }
+
+  while(l1 <= mid)    
+    b[i++] = array[l1++];
+  while(l2 <= right)   
+    b[i++] = array[l2++];
+
+  for(i = left; i <= right; i++) {
+    swap1 = i
+    swap2 = right
+    array[i] = b[i];
+    daraw()
+    await sleep(sleeptimer)
+  }
+
+}
+
+async function mergesorting(array, left, right) {
+  ismergesort = true
+
+  if(left<right) {
+    let mid = floor((left+right) / 2)
+    await mergesorting(array, left, mid)
+    await mergesorting(array, mid+1, right)
+    await mergesortalgorithm(array, left, mid, right)
+  }
+
+  // to end if sorted and over
+  let flag = true;
+  for (s = 0; s < array.length - 1; s++) {
+      if (array[s] > array[s+1]) {
+          flag = false;
+          break;
+      }
+  }
+  if(flag) {
+    swap1 = -1
+    swap2 = -1
+    sorted = true
+    daraw()
+
+    // Enable buttons
+    let buttons = document.getElementsByTagName('button')
+    for(i=0; i<buttons.length; i++) {
+      buttons[i].disabled = false
+    }
+    ismergesort = false
+  }
+  
+}
+
 // ***************************************** QUICK SORT ********************************************************* //
 
 async function quicksorting(array, left, right) {
+  daraw()
   let tempLeft = left;
   let tempRight = right;
   pivot = array[floor((left+right)/2)];
@@ -139,6 +221,7 @@ async function quicksorting(array, left, right) {
     if(tempLeft<tempRight) {
       
       await swap(array, tempLeft, tempRight)
+      daraw()
       
       // for speed
       if(sleeptimer > 50) sleeptimer -= 5
@@ -151,13 +234,25 @@ async function quicksorting(array, left, right) {
   if(right > tempRight)
     await quicksorting(array, tempRight+1, right);
 
-  swap1 = -1
-  swap2 = -1
-  pivot = -1
-  sorted = true
-  // Enable buttons
-  let buttons = document.getElementsByTagName('button')
-  for(i=0; i<buttons.length; i++) {
-    buttons[i].disabled = false
+  // to end if sorted and over
+  let flag = true;
+  for (s = 0; s < array.length - 1; s++) {
+      if (array[s] > array[s+1]) {
+          flag = false;
+          break;
+      }
+  }
+  if(flag) {
+    swap1 = -1
+    swap2 = -1
+    pivot = -1
+    sorted = true
+    daraw()
+
+    // Enable buttons
+    let buttons = document.getElementsByTagName('button')
+    for(i=0; i<buttons.length; i++) {
+      buttons[i].disabled = false
+    }
   }
 }
