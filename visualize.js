@@ -1,20 +1,23 @@
 // --------- INITIAL PARMS ----------- //
 let swap1 = -1
 let swap2 = -1
-let w = 12
+let w = 10
 let sleeptimer = 260
 let countdown = 100
 let sorted = true
 let array = []
+let pivot = -1
 // ------------------------------------ BASIC DRAWING, SWAPPING FUNCTIONS --------------------------------------- //
 function draw() {
   background(255)
   noStroke()
   for (let x = 0; x < array.length; x++) {
-    if(x == swap1) {
+    if(x == array.indexOf(pivot)) {
       c = color('rgb(0,0,255)');
+    } else if(x == swap1) {
+      c = color('rgb(239, 45, 252)');
     } else if(x == swap2) {
-      c = color('rgb(255,0,0)');
+      c = color('rgb(255,255,0)');
     } else {
       c = color('rgb('+floor(255*array[x]/120)+',0,0)');
     }
@@ -46,7 +49,7 @@ function sleep(ms) {
 // *************************************************************************************************************** //
 
 function setup(choice) {
-  var canvas = createCanvas(document.getElementById("sketch-holder").clientWidth, 120) 
+  let canvas = createCanvas(document.getElementById("sketch-holder").clientWidth, 120) 
   canvas.parent('sketch-holder') 
 
   if((choice && sorted) || !choice) {
@@ -54,7 +57,6 @@ function setup(choice) {
     for (i = 0; i < array.length; i++) {
       array[i] = random(height)
     }
-    draw()
     sorted = false
   }
   
@@ -63,15 +65,22 @@ function setup(choice) {
     countdown = 100
 
     // Disabling all buttons
-    var buttons = document.getElementsByTagName('button')
+    let buttons = document.getElementsByTagName('button')
     for(i=0; i<buttons.length; i++) {
       buttons[i].disabled = true
     }
 
     if(choice == 1)
       bubblesorting(array, array.length)
-    if(choice == 2)
+    else if(choice == 2)
       mergesorting(array, array.length)
+    else if(choice == 3)
+      insertionsorting(array, array.length)
+    else if(choice == 4)
+      quicksorting(array, 0, array.length-1)
+    else if(choice == 5)
+      selectionsorting(array, array.length)
+
 
   } 
   
@@ -84,7 +93,7 @@ function setup(choice) {
 // ***************************************** BUBBLE SORT ********************************************************* //
 
 async function bubblesorting(array, len) {
-  var flag
+  let flag
   for(i=0; i<len-1; i++) 
   {
     flag = 1
@@ -93,12 +102,11 @@ async function bubblesorting(array, len) {
       if(array[j] > array[j+1]) 
       {
         await swap(array, j, j+1)
-        draw()
         flag = 0
 
         // for speed
         if(sleeptimer > 50) sleeptimer -= 5
-        else if(countdown-- < 0) sleeptimer -= 10
+        else if(countdown-- < 0) sleeptimer = 0 
       }
     }
     if(flag == 1)
@@ -106,10 +114,49 @@ async function bubblesorting(array, len) {
   }
   swap1 = -1
   swap2 = -1
-  draw()
   sorted = true
   // Enable buttons
-  var buttons = document.getElementsByTagName('button')
+  let buttons = document.getElementsByTagName('button')
+  for(i=0; i<buttons.length; i++) {
+    buttons[i].disabled = false
+  }
+}
+
+// ***************************************** QUICK SORT ********************************************************* //
+
+async function quicksorting(array, left, right) {
+  let tempLeft = left;
+  let tempRight = right;
+  pivot = array[floor((left+right)/2)];
+
+  while(tempLeft < tempRight)
+  {
+    while(array[tempLeft] < pivot)
+      tempLeft++;
+    while(array[tempRight] > pivot)
+      tempRight--;
+
+    if(tempLeft<tempRight) {
+      
+      await swap(array, tempLeft, tempRight)
+      
+      // for speed
+      if(sleeptimer > 50) sleeptimer -= 5
+      else if(countdown-- < 0) sleeptimer = 0
+    }
+  }
+
+  if(left < tempLeft)
+    await quicksorting(array, left, tempLeft-1);
+  if(right > tempRight)
+    await quicksorting(array, tempRight+1, right);
+
+  swap1 = -1
+  swap2 = -1
+  pivot = -1
+  sorted = true
+  // Enable buttons
+  let buttons = document.getElementsByTagName('button')
   for(i=0; i<buttons.length; i++) {
     buttons[i].disabled = false
   }

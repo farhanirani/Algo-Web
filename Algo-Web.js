@@ -179,10 +179,9 @@ function basics4(){
 function bubblesort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main-1").style.display = 'block';
+    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(1)''>Visualize</button>"
 
     setup()
-
-    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(1)''>Visualize</button>"
 
     document.getElementById("desc-main").innerHTML=`  
     <pre><xmp>
@@ -211,9 +210,10 @@ function bubblesort(){
 
 function mergesort(){
     document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
+    document.getElementById("desc-main-1").style.display = 'block';
+    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(2)''>Visualize</button>"
 
-    // setup()
+    setup()
 
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void mergesort(int a[], int left, int right)
@@ -255,7 +255,11 @@ function mergesort(){
 
 function insertionsort(){
     document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
+    document.getElementById("desc-main-1").style.display = 'block';
+    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(3)''>Visualize</button>"
+
+    setup()
+
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void insertionsort(int a[], int length)
     {
@@ -279,7 +283,11 @@ function insertionsort(){
 
 function quicksort(){
     document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
+    document.getElementById("desc-main-1").style.display = 'block';
+    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(4)''>Visualize</button>"
+
+    setup()
+
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     void quicksort(int *a, int left, int right)
     {
@@ -314,6 +322,12 @@ function quicksort(){
 function selectionsort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main-1").style.display = 'block';
+
+    // document.getElementById("desc-main-1").style.display = 'block';
+    // document.getElementById("dybutton").innerHTML = "<button  onclick='setup(5)''>Visualize</button>"
+
+    // setup()
+
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
     
     </xmp></pre>
