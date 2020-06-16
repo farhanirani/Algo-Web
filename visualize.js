@@ -307,3 +307,39 @@ async function quicksorting(array, left, right) {
     }
   }
 }
+
+// ***************************************** SELECTION SORT ********************************************************* //
+
+async function selectionsorting(a, length) {
+  let i, j, swapPos
+  for(j=0; j<length-1; j++) {
+    swapPos = j;
+    
+    for(i=j+1; i<length; i++) {
+      if(a[i] < a[swapPos])
+        swapPos = i; 
+
+      swap1 = i
+      swap2 = swapPos
+      daraw() 
+      await sleep(sleeptimer)
+      // for speed
+      if(sleeptimer > 5) sleeptimer -= 5
+    }
+
+    await swap(a,swapPos,j);
+    // for speed
+    if(sleeptimer > 5) sleeptimer -= 5
+  }
+
+  swap1 = -1
+  swap2 = -1
+  sorted = true
+  daraw()
+
+  // Enable buttons
+  let buttons = document.getElementsByTagName('button')
+  for(i=0; i<buttons.length; i++) {
+    buttons[i].disabled = false
+  }
+}

@@ -322,14 +322,27 @@ function quicksort(){
 function selectionsort(){
     document.documentElement.scrollTop = 0;
     document.getElementById("desc-main-1").style.display = 'block';
+    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(5)''>Visualize</button>"
 
-    // document.getElementById("desc-main-1").style.display = 'block';
-    // document.getElementById("dybutton").innerHTML = "<button  onclick='setup(5)''>Visualize</button>"
-
-    // setup()
+    setup()
 
     document.getElementById("desc-main").innerHTML=`<pre><xmp>
-    
+    void selectionsort(int a[],int length)
+    {
+        int i,j, min, swapPos;
+        
+        for(j=0; j<length-1; j++)
+        {
+            swapPos = j;
+            for(i=j+1; i<length; i++)
+            {
+                if(a[i] < a[swapPos]) {
+                    swapPos = i;
+                }
+            }
+            swap(a,swapPos,j);
+        }
+    }
     </xmp></pre>
     `
 }
