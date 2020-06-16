@@ -65,7 +65,7 @@ body::-webkit-scrollbar {
     width: 95%;
     margin: auto;
     padding-top: 80px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
 }
 
 .desc-inner-1{
@@ -130,20 +130,19 @@ body::-webkit-scrollbar {
     display: flex; 
     justify-content: center;
     bottom: 0;
-    padding-bottom: 40px;
+    padding-bottom: 80px;
+    transform: scale(0.8);
 }
 
 .about-main ul{
-    overflow: hidden;
 	padding-top: 6px;
     padding-bottom: 6px;
     list-style-type: none;
 }
 
 .about-main li{
-    background-color: rgb(212, 9, 9);
     float: left;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .about-main li a{
@@ -153,9 +152,33 @@ body::-webkit-scrollbar {
     padding: 14px 16px;
     text-decoration: none;
     border: 1px solid transparent;
-	transition: 0.4s ease;
+    transition: 0.4s ease;
+    border-radius: 10px;
+    transform: scale(0.8);
 }
 
-.about-main li a:hover{
-    background-color:rgb(0, 0, 0);
+.about-main i{
+    transition: 0.4s ease;
+}
+
+#linkedinid{
+    background-color: rgb(40,103,178);
+}
+#linkedinid:hover{
+    box-shadow: 0px 0px 80px 40px rgb(40,103,178);
+    transform: scale(1.2);
+}
+#linkedinid:hover i{
+    transform: scale(1.8);
+}
+
+#githubid{
+    background-color: rgb(0, 0, 0)
+}
+#githubid:hover{
+    box-shadow: 0px 0px 80px 40px rgb(0, 0, 0);
+    transform: scale(1.2);
+}
+#githubid:hover i{
+    transform: scale(1.8);
 }
