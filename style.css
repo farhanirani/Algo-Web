@@ -165,20 +165,20 @@ body::-webkit-scrollbar {
     background-color: rgb(40,103,178);
 }
 #linkedinid:hover{
-    box-shadow: 0px 0px 80px 40px rgb(40,103,178);
-    transform: scale(1.2);
+    box-shadow: 0px 0px 40px 20px rgb(40,103,178);
+    transform: scale(1.1);
 }
 #linkedinid:hover i{
-    transform: scale(1.8);
+    transform: scale(1.4);
 }
 
 #githubid{
     background-color: rgb(0, 0, 0)
 }
 #githubid:hover{
-    box-shadow: 0px 0px 80px 40px rgb(0, 0, 0);
-    transform: scale(1.2);
+    box-shadow: 0px 0px 40px 20px rgb(0, 0, 0);
+    transform: scale(1.1);
 }
 #githubid:hover i{
-    transform: scale(1.8);
+    transform: scale(1.4);
 }
