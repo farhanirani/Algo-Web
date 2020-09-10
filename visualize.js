@@ -68,7 +68,7 @@ function setup(choice) {
   daraw()
   
   if(choice) {  
-    sleeptimer = 260
+    sleeptimer = 10
 
     // Disabling all buttons
     let buttons = document.getElementsByTagName('button')
@@ -99,6 +99,7 @@ function setup(choice) {
 // ***************************************** BUBBLE SORT ********************************************************* //
 
 async function bubblesorting(array, len) {
+  sleeptimer = 3
   let flag
   for(i=0; i<len-1; i++) 
   {
@@ -112,7 +113,7 @@ async function bubblesorting(array, len) {
         flag = 0
 
         // for speed
-        if(sleeptimer > 5) sleeptimer -= 5
+        // if(sleeptimer > 5) sleeptimer -= 5
       }
     }
     if(flag == 1)
@@ -149,7 +150,7 @@ async function mergesortalgorithm(array, left, mid, right) {
     }
     
     // for speed
-    if(sleeptimer > 5) sleeptimer -= 5
+    // if(sleeptimer > 5) sleeptimer -= 5
   }
 
   while(l1 <= mid)    
@@ -204,6 +205,7 @@ async function mergesorting(array, left, right) {
 // ***************************************** QUICK SORT ********************************************************* //
 
 async function insertionsorting(array, len) {
+  sleeptimer = 3
   let val,m,n
   for (m = 0; m < len; m++)
   {
@@ -219,8 +221,7 @@ async function insertionsorting(array, len) {
         daraw()
         await sleep(sleeptimer)
         // for speed
-        if(sleeptimer > 5) sleeptimer -= 5
-        
+        // if(sleeptimer > 5) sleeptimer -= 5
       } 
       else {
         break;
@@ -257,7 +258,7 @@ async function quicksorting(array, left, right) {
       daraw()
       await sleep(sleeptimer)
       // for speed
-      if(sleeptimer > 5) sleeptimer -= 5
+      // if(sleeptimer > 5) sleeptimer -= 5
 
     }
     while(array[tempRight] > pivot) {
@@ -276,7 +277,7 @@ async function quicksorting(array, left, right) {
       daraw()
       
       // for speed
-      if(sleeptimer > 5) sleeptimer -= 5
+      // if(sleeptimer > 5) sleeptimer -= 5
     }
   }
 
@@ -310,8 +311,9 @@ async function quicksorting(array, left, right) {
 
 // ***************************************** SELECTION SORT ********************************************************* //
 
-async function selectionsorting(a, length) {
+async function selectionsorting(a, length) {   
   let i, j, swapPos
+  sleeptimer = 3
   for(j=0; j<length-1; j++) {
     swapPos = j;
     
@@ -324,12 +326,12 @@ async function selectionsorting(a, length) {
       daraw() 
       await sleep(sleeptimer)
       // for speed
-      if(sleeptimer > 5) sleeptimer -= 5
+      // if(sleeptimer > 5) sleeptimer -= 5
     }
 
     await swap(a,swapPos,j);
     // for speed
-    if(sleeptimer > 5) sleeptimer -= 5
+    // if(sleeptimer > 5) sleeptimer -= 5
   }
 
   swap1 = -1
