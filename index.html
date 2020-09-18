@@ -1,84 +1,127 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158873779-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-158873779-1"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'UA-158873779-1');
+      gtag("config", "UA-158873779-1");
     </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="visualize.js"></script>
     <script async src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Algo-Web</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="top">
-            <div class="navbar">
-                <a href="index.html">Algo-Web</a>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a target="_blank" href="https://github.com/farhanirani/Algorithms">All Programs</a></li>                 
-                </ul>
-            </div>
+      <div class="top">
+        <div class="navbar">
+          <a href="index.html">Algo-Web</a>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/farhanirani/Algorithms"
+                >All Programs</a
+              >
+            </li>
+          </ul>
         </div>
-        <div class="desc">
-            <div class="desc-inner-1" id="desc-main-1" style="display: none;">
-                <div id='sketch-holder' style="widows: 100%; max-width: 1200px; margin: auto; "></div>
-                <br>
-                <div id="dybutton"></div>
-            </div>
+      </div>
+      <div class="desc">
+        <div class="desc-inner-1" id="desc-main-1" style="display: none">
+          <div
+            id="sketch-holder"
+            style="widows: 100%; max-width: 1200px; margin: auto"
+          ></div>
+          <br />
+          <div id="dybutton"></div>
+        </div>
 
-            <div class="desc-inner">
-                <h3 style="font-size: 20px;" id="desc-main">
-                    Sorting Visualization, Algorithms and Programs ....
-                    <br><br> .. all in one place
-                </h3>
-            </div>
+        <div class="desc-inner">
+          <h3 style="font-size: 20px" id="desc-main">
+            Sorting Visualization, Algorithms and Programs ....
+            <br /><br />
+            .. all in one place
+          </h3>
         </div>
-        <div class="main-content">
-            <div id="center-main">
-                <ul>
-                    <!-- <li><button onclick="basics1()">Basics of C.....1 (Input and swap) </button></li>
+      </div>
+      <div class="main-content">
+        <div id="center-main">
+          <ul>
+            <!-- <li><button onclick="basics1()">Basics of C.....1 (Input and swap) </button></li>
                     <li><button onclick="basics2()">Basics of C.....2 (Functions)</button></li>
                     <li><button onclick="basics3()">Basics of C.....3 (Arrays)</button></li>
                     <li><button onclick="basics4()">Basics of C.....4 (Passing an array to a function)</button></li> -->
-                    <li><button style="border: 0; font-size: large; pointer-events:none;">Sorting</button></li>
-                    <li><button onclick="bubblesort()">Bubble Sort</button></li>
-                    <li><button onclick="mergesort()">Merge Sort</button></li>
-                    <li><button onclick="insertionsort()">Insertion Sort</button></li>
-                    <li><button onclick="quicksort()">Quick Sort</button></li>
-                    <li><button onclick="selectionsort()">Selection Sort</button></li>
-                    
-                    <li><button style="border: 0; font-size: large; pointer-events:none;">C Basics</button></li>
-                    <li><button onclick="pattern1()"><pre>      1<br>    2 3<br> 4 5 6</pre></button></li>
-                    <li><button onclick="pattern2()"><pre>  *<br>    * *<br>      * * *<br>        * * * *</pre></button></li>
-                    <li><button onclick="infixtopostfix()">Infix to Postfix</button></li>
-                    <li><button onclick="postfixeval()">Postfix Evaluation</button></li>
-                    
-                    <li><button style="border: 0; font-size: large; pointer-events:none;">Searching</button></li>
-                    <li><button onclick="lcs()">Longest Common Subsequence</button></li>
-                    <li><button onclick="binarysearch()">Binary Search</button></li>
-                    
-                    <li><button style="border: 0;font-size: large; pointer-events:none;">Dynamic Programming</button></li>
-                    <li><button onclick="floydwarshall()">Floyd Warshall Algorithm for the shortest path</button></li>
-                    <li><button onclick="knapsack01()">0/1 Knapsack</button></li>
-                    <li><button onclick="nqueens()">N Queens</button></li>
-                </ul>
-            </div>
-        </div>
-    </header>
-</body>
+            <li>
+              <button style="border: 0; font-size: large; pointer-events: none">
+                Sorting
+              </button>
+            </li>
+            <li><button onclick="bubblesort()">Bubble Sort</button></li>
+            <li><button onclick="mergesort()">Merge Sort</button></li>
+            <li><button onclick="insertionsort()">Insertion Sort</button></li>
+            <li><button onclick="quicksort()">Quick Sort</button></li>
+            <li><button onclick="selectionsort()">Selection Sort</button></li>
 
+            <li>
+              <button style="border: 0; font-size: large; pointer-events: none">
+                C Basics
+              </button>
+            </li>
+            <li>
+              <button onclick="pattern1()">
+                <pre>      1<br>    2 3<br> 4 5 6</pre>
+              </button>
+            </li>
+            <li>
+              <button onclick="pattern2()">
+                <pre>  *<br>    * *<br>      * * *<br>        * * * *</pre>
+              </button>
+            </li>
+            <li>
+              <button onclick="infixtopostfix()">Infix to Postfix</button>
+            </li>
+            <li><button onclick="postfixeval()">Postfix Evaluation</button></li>
+
+            <li>
+              <button style="border: 0; font-size: large; pointer-events: none">
+                Searching
+              </button>
+            </li>
+            <li><button onclick="lcs()">Longest Common Subsequence</button></li>
+            <li><button onclick="binarysearch()">Binary Search</button></li>
+
+            <li>
+              <button style="border: 0; font-size: large; pointer-events: none">
+                Dynamic Programming
+              </button>
+            </li>
+            <li>
+              <button onclick="floydwarshall()">
+                Floyd Warshall Algorithm for the shortest path
+              </button>
+            </li>
+            <li><button onclick="knapsack01()">0/1 Knapsack</button></li>
+            <li><button onclick="nqueens()">N Queens</button></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>

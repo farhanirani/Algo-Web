@@ -1,10 +1,9 @@
 // -------------------- Basics ---------------------------- //
 
-
-function basics1(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function basics1() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     TAKING IN TWO NUMBERS AND SWAPPING THEM
     
     #include<stdio.h> //this includes the header file stdio
@@ -33,13 +32,13 @@ function basics1(){
         //%d in printf prints the variable mentioned after ",  
         //the variable type should match the format specifier.
     }
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function basics2(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function basics2() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     USING A FUNCTION TO SWAP TWO VARIABLES
     
     #include<stdio.h>
@@ -78,13 +77,13 @@ function basics2(){
         //you pass the same number of parameters with the same data type to the function.
         //here a and b are known as actual parameters.
     }
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function basics3(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function basics3() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     ARRAYS IN C
     
     #include<stdio.h>
@@ -125,13 +124,13 @@ function basics3(){
         }      
     }
 
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function basics4(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function basics4() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     PASSING ARRAY TO A FUNCTION
     
     #include<stdio.h>
@@ -169,21 +168,20 @@ function basics4(){
         //run the code and make changes to get a better understanding. 
     }
 
-   </xmp></pre>`       
-};
-
+   </xmp></pre>`;
+}
 
 // -------------------- Sorting ---------------------------- //
 
+function bubblesort() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "block";
+  document.getElementById("dybutton").innerHTML =
+    "<button  onclick='setup(1)''>Visualize</button>";
 
-function bubblesort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'block';
-    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(1)''>Visualize</button>"
+  setup();
 
-    setup()
-
-    document.getElementById("desc-main").innerHTML=`  
+  document.getElementById("desc-main").innerHTML = `  
     <pre><xmp>
     void bubblesort(int a[], int length)
     {
@@ -205,17 +203,18 @@ function bubblesort(){
         }
     }
    </xmp></pre>
-   `
-};
+   `;
+}
 
-function mergesort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'block';
-    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(2)''>Visualize</button>"
+function mergesort() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "block";
+  document.getElementById("dybutton").innerHTML =
+    "<button  onclick='setup(2)''>Visualize</button>";
 
-    setup()
+  setup();
 
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     void mergesort(int a[], int left, int right)
     {
         if(left<right)
@@ -250,17 +249,18 @@ function mergesort(){
     }
     
    </xmp></pre>
-   `       
-};
+   `;
+}
 
-function insertionsort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'block';
-    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(3)''>Visualize</button>"
+function insertionsort() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "block";
+  document.getElementById("dybutton").innerHTML =
+    "<button  onclick='setup(3)''>Visualize</button>";
 
-    setup()
+  setup();
 
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     void insertionsort(int a[], int length)
     {
         int i,j,val;
@@ -278,17 +278,18 @@ function insertionsort(){
     }
     
    </xmp></pre>
-    `       
-};
+    `;
+}
 
-function quicksort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'block';
-    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(4)''>Visualize</button>"
+function quicksort() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "block";
+  document.getElementById("dybutton").innerHTML =
+    "<button  onclick='setup(4)''>Visualize</button>";
 
-    setup()
+  setup();
 
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     void quicksort(int *a, int left, int right)
     {
         int i,j,k,temp,pivot;
@@ -316,17 +317,18 @@ function quicksort(){
             quicksort(a,j+1,right);
     }
     </xmp></pre>
-    `
+    `;
 }
 
-function selectionsort(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'block';
-    document.getElementById("dybutton").innerHTML = "<button  onclick='setup(5)''>Visualize</button>"
+function selectionsort() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "block";
+  document.getElementById("dybutton").innerHTML =
+    "<button  onclick='setup(5)''>Visualize</button>";
 
-    setup()
+  setup();
 
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     void selectionsort(int a[],int length)
     {
         int i,j, min, swapPos;
@@ -344,16 +346,15 @@ function selectionsort(){
         }
     }
     </xmp></pre>
-    `
+    `;
 }
 
 // -------------------- C Basics ---------------------------- //
 
-
-function pattern1(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function pattern1() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     #include<stdio.h>
     void main()
     {
@@ -372,13 +373,13 @@ function pattern1(){
         }
     }
 
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function pattern2(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function pattern2() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     #include<stdio.h>
     void main()
     {
@@ -390,13 +391,13 @@ function pattern2(){
             printf("\\n");
         }
     }
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function infixtopostfix(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function infixtopostfix() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
 
     int priority( char a)
     {
@@ -439,13 +440,13 @@ function infixtopostfix(){
         printf("%c",data);
     }
 
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function postfixeval(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function postfixeval() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     printf("Enter postfix expression : ");
     scanf("%s",s);
     -------------------------------
@@ -472,18 +473,15 @@ function postfixeval(){
     ans = pop();
     printf("Answer : %f",ans);
 
-   </xmp></pre>`       
-};
-
+   </xmp></pre>`;
+}
 
 // -------------------- Searching ---------------------------- //
 
-
-
-function binarysearch(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre>
+function binarysearch() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre>
     void binarysearch(int *a, int start, int end, int target)
     {
         if(end < start){
@@ -502,13 +500,13 @@ function binarysearch(){
         else     <i>//new start would be mid+1, because target in upper half</i>
             binarysearch(a,mid+1,end,target);
     }
-   </pre>`       
-};
+   </pre>`;
+}
 
-function lcs(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function lcs() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     void lcs(char *x, char *y)
     {
         //finding the LCS and direction matrices
@@ -571,17 +569,15 @@ function lcs(){
     }
 
     
-   </xmp></pre>`       
-};
-
+   </xmp></pre>`;
+}
 
 // -------------------- Dynamic Programming ---------------------------- //
 
-
-function floydwarshall(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function floydwarshall() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     
     void main()
     {
@@ -619,13 +615,13 @@ function floydwarshall(){
             printf("\\n");}
     }
     
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function knapsack01(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function knapsack01() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     
     #include<stdio.h>
 
@@ -707,13 +703,13 @@ function knapsack01(){
         }
     }
     
-   </xmp></pre>`       
-};
+   </xmp></pre>`;
+}
 
-function nqueens(){
-    document.documentElement.scrollTop = 0;
-    document.getElementById("desc-main-1").style.display = 'none';
-    document.getElementById("desc-main").innerHTML=`<pre><xmp>
+function nqueens() {
+  document.documentElement.scrollTop = 0;
+  document.getElementById("desc-main-1").style.display = "none";
+  document.getElementById("desc-main").innerHTML = `<pre><xmp>
     #include<stdio.h>
     #include<stdlib.h>
     
@@ -765,8 +761,5 @@ function nqueens(){
         nQueens(1,n);
     }
     
-   </xmp></pre>`       
-};
-
-
-
+   </xmp></pre>`;
+}
