@@ -185,13 +185,13 @@ function bubblesort() {
     <pre><xmp>
     
     for i in range(len(a) - 1):
-        flag = True
-        for j in range(len(a)-i-1):
-            if a[j] > a[j+1]:
-                a[j], a[j + 1] = a[j + 1], a[j]
-                flag = False
-        if flag:
-            break
+            flag = True
+            for j in range(len(a)-i-1):
+                    if a[j] > a[j+1]:
+                            a[j], a[j + 1] = a[j + 1], a[j]
+                            flag = False
+            if flag:
+                    break
             
    </xmp></pre>
    `;
@@ -206,38 +206,49 @@ function mergesort() {
   setup();
 
   document.getElementById("desc-main").innerHTML = `<pre><xmp>
-    void mergesort(int a[], int left, int right)
-    {
-        if(left<right)
-        {
-            int mid = (left + right)/2;
-            mergesort(a,left,mid);
-            mergesort(a,mid+1,right);
-            merge(a,left,mid,right);
-        }
-    }
+  
+    
+    def mergesort(left, right):
+            if left < right:
+                    mid = (left + right) // 2
+                    mergesort(left, mid)
+                    mergesort(mid + 1, right)
+                    merge(left, mid, right)
 
-    void merge(int a[], int left, int mid, int right)
-    {
-        int l1, l2, i;
 
-        for(l1 = left, l2 = mid + 1, i = left; l1 <= mid && l2 <= right; i++) 
-        {
-            if(a[l1] <= a[l2])
-                b[i] = a[l1++];
-            else
-                b[i] = a[l2++];
-        }
+    def merge(left, mid, right):
+            left1 = left
+            left2 = mid + 1
 
-        while(l1 <= mid)    
-            b[i++] = a[l1++];
+            print(f"left1 = {left1}, left2 = {left2}, right = {right} ")
+            print(a[left1:mid+1], a[left2:right+1])
+            temp = []
+            while left1 <= mid and left2 <= right:
+                if a[left1] <= a[left2]:
+                        temp.append(a[left1])
+                        left1 += 1
+                else:
+                        temp.append(a[left2])
+                        left2 += 1
+            # for the remaining elements
+            while left1 <= mid:
+                    temp.append(a[left1])
+                    left1 += 1
+            while left2 <= right:
+                    temp.append(a[left2])
+                    left2 += 1
 
-        while(l2 <= right)   
-            b[i++] = a[l2++];
+            print(temp)
+            for i in range(left, right + 1):
+                    a[i] = temp.pop(0)
+            print()
 
-        for(i = left; i <= right; i++)
-            a[i] = b[i];
-    }
+
+    a = [38, 27, 43, 3, 9, 82, 10]
+    print(a)
+    mergesort(0, len(a)-1)
+    print(a)
+        
     
    </xmp></pre>
    `;
@@ -253,14 +264,14 @@ function insertionsort() {
 
   document.getElementById("desc-main").innerHTML = `<pre><xmp>
     for i in range(1, len(a)):
-        valuetoinsert = a[i]
-        j = i - 1
-        
-        while a[j] > valuetoinsert and j >= 0:
-            a[j+1] = a[j]
-            j -= 1
-        
-        a[j+1] = valuetoinsert
+            valuetoinsert = a[i]
+            j = i - 1
+            
+            while a[j] > valuetoinsert and j >= 0:
+                    a[j+1] = a[j]
+                    j -= 1
+            
+            a[j+1] = valuetoinsert
     
    </xmp></pre>
     `;
@@ -277,26 +288,26 @@ function quicksort() {
   document.getElementById("desc-main").innerHTML = `<pre><xmp>
         
     def partition(left, right):
-        pivot = a[left]
-        i = left
-        j = right
+            pivot = a[left]
+            i = left
+            j = right
 
-        while i < j:
-            while a[i] <= pivot:
-                i += 1
-            while a[j] > pivot:
-                j -= 1
-            if i < j:
-                a[i], a[j] = a[j], a[i]
-        a[left], a[j] = a[j], a[left]
-        return j
+            while i < j:
+                    while a[i] <= pivot:
+                            i += 1
+                    while a[j] > pivot:
+                            j -= 1
+                    if i < j:
+                            a[i], a[j] = a[j], a[i]
+            a[left], a[j] = a[j], a[left]
+            return j
 
         
     def quicksort(left, right):
-        if left < right:
-            pivotLocation = partition(left, right)
-            quicksort(left, pivotLocation-1)
-            quicksort(pivotLocation+1, right)
+            if left < right:
+                    pivotLocation = partition(left, right)
+                    quicksort(left, pivotLocation-1)
+                    quicksort(pivotLocation+1, right)
 
 
     quicksort(0, len(a)-1)
@@ -315,13 +326,13 @@ function selectionsort() {
 
   document.getElementById("desc-main").innerHTML = `<pre><xmp>
     for i in range(len(a)-1):
-        min = i
+            min = i
 
-        for j in range(i + 1, len(a)):
-            if a[j] < a[min]:
-                min = j
+            for j in range(i + 1, len(a)):
+                    if a[j] < a[min]:
+                            min = j
 
-        a[min], a[i] = a[i], a[min]
+            a[min], a[i] = a[i], a[min]
     </xmp></pre>
     `;
 }
