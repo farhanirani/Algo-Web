@@ -183,25 +183,16 @@ function bubblesort() {
 
   document.getElementById("desc-main").innerHTML = `  
     <pre><xmp>
-    void bubblesort(int a[], int length)
-    {
-        int i,j,temp,flag;
-        for(i=0;i<length-1;i++)
-        {
-            flag=1;
-            for(j=0;j<length-i-1;j++)
-            {
-                if(a[j] > a[j+1])
-                {
-                    temp=a[j];
-                    a[j]=a[j+1];
-                    a[j+1]=temp;
-                    flag=0;
-                }
-            }
-            if(flag==1) break;
-        }
-    }
+    
+    for i in range(len(a) - 1):
+        flag = True
+        for j in range(len(a)-i-1):
+            if a[j] > a[j+1]:
+                a[j], a[j + 1] = a[j + 1], a[j]
+                flag = False
+        if flag:
+            break
+            
    </xmp></pre>
    `;
 }
@@ -261,21 +252,15 @@ function insertionsort() {
   setup();
 
   document.getElementById("desc-main").innerHTML = `<pre><xmp>
-    void insertionsort(int a[], int length)
-    {
-        int i,j,val;
-        for(i=1;i<length;i++)
-        {
-            val=a[i];
-            for(j=i-1;j>=0;j--)
-                if(val<a[j])
-                    a[j+1]=a[j];
-                else
-                    break;
-    
-            a[j+1]=val;
-        }
-    }
+    for i in range(1, len(a)):
+        valuetoinsert = a[i]
+        j = i - 1
+        
+        while a[j] > valuetoinsert and j >= 0:
+            a[j+1] = a[j]
+            j -= 1
+        
+        a[j+1] = valuetoinsert
     
    </xmp></pre>
     `;
@@ -290,32 +275,32 @@ function quicksort() {
   setup();
 
   document.getElementById("desc-main").innerHTML = `<pre><xmp>
-    void quicksort(int *a, int left, int right)
-    {
-        int i,j,k,temp,pivot;
-        i=left;
-        j=right;
-        pivot=a[(left+right)/2];
+        
+    def partition(left, right):
+        pivot = a[left]
+        i = left
+        j = right
 
-        while(i<j)
-        {
-            while(a[i]<pivot) 
-                i++;
-            while(pivot<a[j])
-                j--;
-            if(i<j)
-            {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-            }
-        }
-                
-        if(left<i)
-            quicksort(a,left,i-1);
-        if(j<right)
-            quicksort(a,j+1,right);
-    }
+        while i < j:
+            while a[i] <= pivot:
+                i += 1
+            while a[j] > pivot:
+                j -= 1
+            if i < j:
+                a[i], a[j] = a[j], a[i]
+        a[left], a[j] = a[j], a[left]
+        return j
+
+        
+    def quicksort(left, right):
+        if left < right:
+            pivotLocation = partition(left, right)
+            quicksort(left, pivotLocation-1)
+            quicksort(pivotLocation+1, right)
+
+
+    quicksort(0, len(a)-1)
+
     </xmp></pre>
     `;
 }
@@ -329,22 +314,14 @@ function selectionsort() {
   setup();
 
   document.getElementById("desc-main").innerHTML = `<pre><xmp>
-    void selectionsort(int a[],int length)
-    {
-        int i,j, min, swapPos;
-        
-        for(j=0; j<length-1; j++)
-        {
-            swapPos = j;
-            for(i=j+1; i<length; i++)
-            {
-                if(a[i] < a[swapPos]) {
-                    swapPos = i;
-                }
-            }
-            swap(a,swapPos,j);
-        }
-    }
+    for i in range(len(a)-1):
+        min = i
+
+        for j in range(i + 1, len(a)):
+            if a[j] < a[min]:
+                min = j
+
+        a[min], a[i] = a[i], a[min]
     </xmp></pre>
     `;
 }
